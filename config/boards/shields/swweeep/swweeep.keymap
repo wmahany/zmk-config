@@ -66,7 +66,7 @@
             bindings = <
     &kp W        &kp L        &kp Y       &kp P          &kp B                                       &kp Z            &kp F       &kp O          &kp U        &kp ASTRK
     &kp C        &kp R        &kp S       &kp T          &kp G                                       &kp M            &kp N       &kp E          &kp I        &kp A
-    &hm LSHIFT Q &hm LGUI J   &hm LALT V  &hm  LCTL D    &hm K                                       &hm X            &hm RCTL H  &hm RALT COMMA &hm RGUI DOT &hm RSHIFT FSLH
+    &hm LSHIFT Q &hm LGUI J   &hm LALT V  &hm  LCTL D    &hm K                                       &hm X            &hm RCTL H  &hm RALT COMMA &hm RGUI DOT &hm RSHIFT SLASH
                                           &lt LOWER ESC  &kp LSFT  &hm LGUI TAB          &kp ENTER   &lt MEDIA SPACE  &kp RAISE BSPC
             >;
         };
@@ -75,9 +75,9 @@
             label = "RAISE";
 
             bindings = <
-    &kp 1    &kp 2    &kp 3       &kp 4    &kp 5                      &kp 6    &kp 7  &kp 8    &kp 9    &kp 0
-    &kp LBRC &kp RBRC &kp LPRN &kp RPRN &kp PGUP                      &kp LEFT &kp DOWN &kp UP   &kp RGHT &kp MINS
-    &kp TILD &kp GRV  &kp LCBR &kp RCBR &kp PGDN                      &kp BSLS &kp HOME &kp END  &trans &kp EQL
+    &kp N1    &kp N2     &kp N3       &kp N4    &kp N5                   &kp N6    &kp N7   &kp N8   &kp N9    &kp N0
+    &kp LBKT  &kp RBKT   &kp LPAR &kp RPAR &kp PG_UP                      &kp LEFT  &kp DOWN &kp UP   &kp RIGHT &kp MINUS
+    &kp TILDE &kp GRAVE  &kp LBRC &kp RBRD &kp PG_DN                      &kp BACKSLASH  &kp HOME &kp END  &trans    &kp EQUAL
                                 &trans &trans &trans     &trans &trans &trans
             >;
         };
@@ -86,9 +86,9 @@
             label = "LOWER";
 
             bindings = <
-  &kp EXLM &kp AT  &kp HASH  &kp DLR  &kp PERC                      &kp CIRC &kp 7  &kp 8    &kp 9 &kp COLN
-  &kp PERC &kp CIRC&kp AMPR  &kp ASTR &trans                      &trans &kp 4  &kp 5    &kp 6 &kp DOT
-  &kp TILD &kp GRV  &kp PIPE &kp BSLS &kp SCLN                      &trans &kp 1  &kp 2    &kp 3 &kp SLSH
+  &kp EXCL &kp AT  &kp HASH  &kp DLLR  &kp PRCNT                      &kp CIRC &kp N7  &kp N8    &kp N9 &kp COLON
+  &kp PRCNT &kp CARET &kp AMPS  &kp STAR &trans                      &trans &kp N4  &kp N5    &kp N6 &kp DOT
+  &kp TILDE &kp GRAVE  &kp PIPE &kp BSLS &kp SEMI                      &trans &kp N1  &kp N2    &kp N3 &kp SLSH
                              &trans &trans&trans      &trans &kp 0 &trans
             >;
         };
@@ -97,23 +97,23 @@
             label = "MEDIA";
 
             bindings = <
-  &kp F1   &kp F2  &kp F3    &kp F4 &trans                       &trans &kp MUTE &kp VOLD  &kp VOLU    &trans
-  &kp F5   &kp F6  &kp F7    &kp F8 &trans                       &trans &kp MPLY &kp MNXT  &kp MPRV   &trans
-  &kp F9   &kp F10 &kp F11   &kp F12 &trans                      &trans &kp BRID &kp BRIU  &trans  &trans
+  &kp F1   &kp F2  &kp F3    &kp F4 &trans                       &trans &kp K_MUTE &kp K_VOL_DN  &kp K_VOL_UP    &trans
+  &kp F5   &kp F6  &kp F7    &kp F8 &trans                       &trans &kp K_PP &kp K_NEXT  &kp K_PREV   &trans
+  &kp F9   &kp F10 &kp F11   &kp F12 &trans                      &trans &kp C_BRI_DN &kp C_BRI_UP  &trans  &trans
                                &trans &trans&trans       &trans&trans &trans
             >;
         };
 
-        media_layer {
-            label = "ADJUST";
+  //       media_layer {
+  //           label = "ADJUST";
 
-            bindings = <
-  &trans &trans  &trans  &trans &trans                      &kp WH_L MS_WHD  MS_WHU   &kp WH_R  &trans
-  &trans  MS_SP0   MS_SP1   MS_SP2 &trans                      MS_LEFT MS_DOWN MS_UP    MS_RIGHT &trans
-  QWERTY  COLEMAK  &trans   CANARY &trans                      &trans MS_BTN1 MS_BTN3  MS_BTN2  RESET
-                               &trans &trans&trans      &trans&trans &trans
-            >;
-        };
+  //           bindings = <
+  // &trans &trans  &trans  &trans &trans                      &kp WH_L MS_WHD  MS_WHU   &kp WH_R  &trans
+  // &trans  MS_SP0   MS_SP1   MS_SP2 &trans                      MS_LEFT MS_DOWN MS_UP    MS_RIGHT &trans
+  // QWERTY  COLEMAK  &trans   CANARY &trans                      &trans MS_BTN1 MS_BTN3  MS_BTN2  RESET
+  //                              &trans &trans&trans      &trans&trans &trans
+  //           >;
+  //       };
 
     };
 };
