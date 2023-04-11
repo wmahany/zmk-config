@@ -18,8 +18,8 @@
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "balanced";
+            quick_tap_ms = <100>;
+            flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
         hs: homerow_shift {
@@ -65,7 +65,7 @@
   &kp EXCL &kp AT  &kp HASH  &kp DLLR  &kp PRCNT                      &kp CARET &kp N7  &kp N8    &kp N9 &kp COLON
   &kp PRCNT &kp CARET &kp AMPS  &kp STAR &trans                      &trans &kp N4  &kp N5    &kp N6 &kp DOT
   &kp TILDE &kp GRAVE  &kp PIPE &kp BSLH &kp SEMI                      &trans &kp N1  &kp N2    &kp N3 &kp SLASH
-                             &trans &trans &trans      &trans &kp 0 &trans
+                             &trans &trans &trans      &trans &kp N0 &trans
             >;
         };
 
