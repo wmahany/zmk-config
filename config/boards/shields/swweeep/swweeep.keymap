@@ -43,7 +43,7 @@
     &kp W        &kp L        &kp Y       &kp P          &kp B                                       &kp Z            &kp F       &kp O          &kp U        &kp ASTRK
     &kp C        &kp R        &kp S       &kp T          &kp G                                       &kp M            &kp N       &kp E          &kp I        &kp A
     &hm LSHIFT Q &hm LGUI J   &hm LALT V  &hm  LCTL D    &hm K                                       &hm X            &hm RCTL H  &hm RALT COMMA &hm RGUI DOT &hm RSHIFT SLASH
-                                          &lt LOWER ESC  &kp LSFT  &hm LGUI TAB          &kp ENTER   &lt MEDIA SPACE  &kp RAISE BSPC
+                                          &lt LOWER ESC  &kp LSFT  &hm LGUI TAB          &kp ENTER   &lt MEDIA SPACE  &lt RAISE BSPC
             >;
         };
 
@@ -51,10 +51,10 @@
             label = "RAISE";
 
             bindings = <
-    &kp N1    &kp N2     &kp N3       &kp N4    &kp N5                   &kp N6    &kp N7   &kp N8   &kp N9    &kp N0
-    &kp LBKT  &kp RBKT   &kp LPAR &kp RPAR &kp PG_UP                      &kp LEFT  &kp DOWN &kp UP   &kp RIGHT &kp MINUS
-    &kp TILDE &kp GRAVE  &kp LBRC &kp RBRD &kp PG_DN                      &kp BACKSLASH  &kp HOME &kp END  &kp DEL  &kp EQUAL
-                                &trans &trans &trans     &trans &trans &trans
+            &kp N1    &kp N2     &kp N3       &kp N4    &kp N5                   &kp N6    &kp N7   &kp N8   &kp N9    &kp N0
+            &kp LBKT  &kp RBKT   &kp LPAR &kp RPAR &kp PG_UP                      &kp LEFT  &kp DOWN &kp UP   &kp RIGHT &kp MINUS
+            &kp TILDE &kp GRAVE  &kp LBRC &kp RBRD &kp PG_DN                      &kp BACKSLASH  &kp HOME &kp END  &kp DEL  &kp EQUAL
+                                                &trans &trans &trans          &trans &trans &trans
             >;
         };
 
@@ -65,7 +65,7 @@
   &kp EXCL &kp AT  &kp HASH  &kp DLLR  &kp PRCNT                      &kp CIRC &kp N7  &kp N8    &kp N9 &kp COLON
   &kp PRCNT &kp CARET &kp AMPS  &kp STAR &trans                      &trans &kp N4  &kp N5    &kp N6 &kp DOT
   &kp TILDE &kp GRAVE  &kp PIPE &kp BSLS &kp SEMI                      &trans &kp N1  &kp N2    &kp N3 &kp SLSH
-                             &trans &trans&trans      &trans &kp 0 &trans
+                             &trans &trans &trans      &trans &kp 0 &trans
             >;
         };
 
