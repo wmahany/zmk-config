@@ -42,7 +42,7 @@
             bindings = <
     &kp W        &kp L        &kp Y       &kp P          &kp B                                       &kp Z            &kp F       &kp O          &kp U        &kp ASTRK
     &kp C        &kp R        &kp S       &kp T          &kp G                                       &kp M            &kp N       &kp E          &kp I        &kp A
-    &hm LSHIFT Q &hm LGUI J   &hm LALT V  &hm  LCTL D    &hm K                                       &hm X            &hm RCTL H  &hm RALT COMMA &hm RGUI DOT &hm RSHIFT SLASH
+    &hm LSHIFT Q &hm LGUI J   &hm LALT V  &hm  LCTL D    &kp K                                       &kp X            &hm RCTL H  &hm RALT COMMA &hm RGUI DOT &hm RSHIFT SLASH
                                           &lt LOWER ESC  &kp LSFT  &hm LGUI TAB          &kp ENTER   &lt MEDIA SPACE  &lt RAISE BSPC
             >;
         };
