@@ -104,16 +104,5 @@
             >;
         };
 
-  //       media_layer {
-  //           label = "ADJUST";
-
-  //           bindings = <
-  // &trans &trans  &trans  &trans &trans                      &kp WH_L MS_WHD  MS_WHU   &kp WH_R  &trans
-  // &trans  MS_SP0   MS_SP1   MS_SP2 &trans                      MS_LEFT MS_DOWN MS_UP    MS_RIGHT &trans
-  // QWERTY  COLEMAK  &trans   CANARY &trans                      &trans MS_BTN1 MS_BTN3  MS_BTN2  RESET
-  //                              &trans &trans&trans      &trans&trans &trans
-  //           >;
-  //       };
-
     };
 };
