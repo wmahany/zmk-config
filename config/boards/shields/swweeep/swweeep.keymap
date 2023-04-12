@@ -27,8 +27,8 @@
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <100>;
-            global-quick-tap;
+            quick-tap-ms = <150>;
+            // global-quick-tap;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
@@ -38,7 +38,7 @@
             label = "HOLD_PREFERRED_HOMEROW_HODS";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <100>;
+            quick-tap-ms = <150>;
             // global-quick-tap;
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
@@ -49,7 +49,8 @@
             label = "MY_LAYER_TAP";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <100>;
+            quick-tap-ms = <150>;
+            // global-quick-tap;
             flavor = "hold-preferred";
             bindings = <&mo>, <&kp>;
         };
