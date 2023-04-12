@@ -59,6 +59,17 @@
             flavor = "hold-preferred";
             bindings = <&mo>, <&kp>;
         };
+
+        tplt: tap_preferred_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP_PREFERRED_LAYER_TAP";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
+        };
+
     };
 
     keymap {
