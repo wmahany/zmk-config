@@ -20,6 +20,7 @@
             };
         };
     behaviors {
+
         skq: sticky_key_quick_release {
             compatible = "zmk,behavior-sticky-key";
             label = "STICKY_KEY_QUICK_RELEASE";
@@ -67,7 +68,7 @@
             label = "MY_LAYER_TAP";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
+            quick-tap-ms = <250>;
             flavor = "hold-preferred";
             bindings = <&mo>, <&kp>;
         };
