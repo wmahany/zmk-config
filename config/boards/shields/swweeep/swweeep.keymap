@@ -69,7 +69,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <300>;
-            global-quick-tap;
+            // global-quick-tap;
             flavor = "hold-preferred";
             bindings = <&mo>, <&kp>;
         };
