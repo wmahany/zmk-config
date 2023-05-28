@@ -62,7 +62,8 @@
             global-quick-tap;
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <36>
+            hold-trigger-key-positions = <36>;
+            hold-trigger-on-release;
         };
 
         mlt: my_layer_tap {
