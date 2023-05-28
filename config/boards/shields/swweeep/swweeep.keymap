@@ -152,9 +152,9 @@
                     label = "ADJUST";
 
                     bindings = <
-                        &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_CLR                       &mwh SCROLL_LEFT  &mwh SCROLL_DOWN  &mwh SCROLL_UP  &mwh SCROLL_RIGHT &trans
-                        &trans       &trans        &trans        &trans       &trans                           &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT   &kp MINUS
-                        &trans       &trans        &trans        &trans       &trans                           &trans            &mkp LCLK         &mkp MCLK       &mkp RCLK         &trans
+                        &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_CLR                       &mwh U_WH_L  &mwh U_WH_D  &mwh U_WH_U  &mwh U_WH_R &trans
+                        &trans       &trans        &trans        &trans       &trans                           &mmv U_MS_L  &mmv U_MS_D  &mmv U_MS_U  &mmv U_MS_R &kp MINUS
+                        &trans       &trans        &trans        &trans       &trans                           &trans       &mkp U_BTN1  &mkp U_BTN2  &mkp U_BTN3 &trans
                                                                 &trans       &trans      &trans      &trans   &trans             &trans
                     >;
                 };
