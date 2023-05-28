@@ -59,9 +59,10 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            //global-quick-tap;
+            global-quick-tap;
             flavor = "hold-preferred";
             bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <36>
         };
 
         mlt: my_layer_tap {
@@ -103,7 +104,7 @@
         };
 
         nav_layer {
-            label = "RAISE";
+
 
             bindings = <
                 &kp N1    &kp N2     &kp N3       &kp N4    &kp N5                   &kp N6    &kp N7   &kp N8   &kp N9    &kp N0
