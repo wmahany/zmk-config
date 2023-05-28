@@ -77,6 +77,17 @@
             bindings = <&mo>, <&kp>;
         };
 
+        hplt: hold_preferred_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_PREFERRED_LAYER_TAP";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            global-quick-tap;
+            flavor = "hold-preferred";
+            bindings = <&mo>, <&kp>;
+        };
+
         tplt: tap_preferred_layer_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "TAP_PREFERRED_LAYER_TAP";
@@ -100,7 +111,7 @@
                 &kp W        &kp L        &kp Y       &kp P          &kp B                                       &kp Z            &kp F       &kp O          &kp U        &kp APOS
                 &kp C        &kp R        &kp S       &kp T          &kp G                                       &kp M            &kp N       &kp E          &kp I        &kp A
                 &hm LSHIFT Q &hm LGUI J   &hm LALT V  &bhm  LCTL D    &kp K                                       &kp X          &bhm RCTL H  &hm RALT COMMA &hm RGUI DOT &hm RSHIFT SLASH
-                                                    &mlt LOWER ESC  &skq LSFT  &hphm LGUI TAB          &kp ENTER   &tplt MEDIA SPACE  &mlt RAISE BSPC
+                                                    &mlt LOWER ESC  &skq LSFT  &hplt LGUI TAB          &kp ENTER   &tplt MEDIA SPACE  &mlt RAISE BSPC
             >;
         };
 
