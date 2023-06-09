@@ -125,6 +125,7 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
+            retro-tap;
         };
 
         hmr: home_row_right {
@@ -138,8 +139,9 @@
             quick-tap-ms = <175>;                // repeat on tap-into-hold
             global-quick-tap-ms = <150>;         // requires PR #1387
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
+            retro-tap;
         };
 
     };
