@@ -40,6 +40,7 @@
             global-quick-tap;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
+            retro-tap;
         };
 
         hm: homerow_mods {
@@ -51,6 +52,7 @@
             global-quick-tap;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+            retro-tap;
         };
 
         hphm: hold_preferred_homerow_mods {
