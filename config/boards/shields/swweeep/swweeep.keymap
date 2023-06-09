@@ -5,6 +5,12 @@
 // #include <dt-bindings/zmk/mouse.h> // This is defind in mouse.dtsi
 #include "mouse.dtsi" //this is for urobs branch
 
+/* use helper macros to define left and right hand keys */
+#include "../zmk-nodefree-config/keypos_def/keypos_36keys.h"                // keyposition helpers
+#define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4  // left-hand keys
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right-hand keys
+#define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                      // thumb keys
+
 #define DEFAULT 0
 #define RAISE   1
 #define LOWER   2
@@ -27,6 +33,7 @@
             label = "STICKY_KEY_QUICK_RELEASE";
             #binding-cells = <1>;
             bindings = <&kp>;
+
             release-after-ms = <1000>;
             quick-release;
         };
@@ -47,11 +54,12 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
             global-quick-tap;
             flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
             retro-tap;
         };
 
@@ -59,11 +67,12 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_PREFERRED_HOMEROW_HODS";
             #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
             global-quick-tap;
             flavor = "hold-preferred";
-            bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <35>;
             hold-trigger-on-release;
         };
@@ -83,22 +92,54 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_PREFERRED_TAP";
             #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
             global-quick-tap;
             flavor = "hold-preferred";
-            bindings = <&kp>, <&kp>;
         };
 
         tplt: tap_preferred_layer_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "TAP_PREFERRED_LAYER_TAP";
             #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
             global-quick-tap;
             flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>;
+        };
+
+        hml: home_row_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOME_ROW_LEFT";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;                // repeat on tap-into-hold
+            global-quick-tap-ms = <150>;         // requires PR #1387
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;             // delay positional check until key-release
+        };
+
+        hmr: home_row_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOME_ROW_RIGHT";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;                // repeat on tap-into-hold
+            global-quick-tap-ms = <150>;         // requires PR #1387
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;             // delay positional check until key-release
         };
 
     };
@@ -110,9 +151,9 @@
             label = "Default";
 
             bindings = <
-                &kp W        &kp L        &kp Y       &kp P          &kp B                                       &kp Z            &kp F       &kp O          &kp U        &kp APOS
-                &kp C        &kp R        &kp S       &kp T          &kp G                                       &kp M            &kp N       &kp E          &kp I        &kp A
-                &hm LSHIFT Q &hm LGUI J   &hm LALT V  &bhm  LCTL D    &kp K                                       &kp X          &bhm RCTL H  &hm RALT COMMA &hm RGUI DOT &hm RSHIFT SLASH
+                &kp W         &kp L         &kp Y        &kp P           &kp B                                       &kp Z          &kp F        &kp O           &kp U         &kp APOS
+                &kp C         &kp R         &kp S        &kp T           &kp G                                       &kp M          &kp N        &kp E           &kp I         &kp A
+                &hml LSHIFT Q &hml LGUI J   &hml LALT V  &hml  LCTL D    &kp K                                       &kp X          &hml RCTL H  &hml RALT COMMA &hml RGUI DOT &hml RSHIFT SLASH
                                                     &mlt LOWER ESC  &skq LSFT  &hpt LGUI TAB          &kp ENTER   &tplt MEDIA SPACE  &mlt RAISE BSPC
             >;
         };
