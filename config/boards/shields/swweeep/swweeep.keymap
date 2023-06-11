@@ -134,7 +134,7 @@
             bindings = <&kp>, <&kp>;
 
             flavor = "balanced";
-            tapping-term-ms = <280>;
+            tapping-term-ms = <120>;
             quick-tap-ms = <175>;                // repeat on tap-into-hold
             global-quick-tap-ms = <150>;         // requires PR #1387
             bindings = <&kp>, <&kp>;
