@@ -44,7 +44,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            global-quick-tap;
+            //global-quick-tap;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
             retro-tap;
@@ -58,7 +58,7 @@
 
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            global-quick-tap;
+            //global-quick-tap;
             flavor = "tap-preferred";
             retro-tap;
         };
@@ -71,7 +71,7 @@
 
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            global-quick-tap;
+            //global-quick-tap;
             flavor = "hold-preferred";
             hold-trigger-key-positions = <35>;
             hold-trigger-on-release;
@@ -83,7 +83,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <300>;
-            // global-quick-tap;
+            // //global-quick-tap;
             flavor = "hold-preferred";
             bindings = <&mo>, <&kp>;
         };
@@ -96,7 +96,7 @@
 
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            global-quick-tap;
+            //global-quick-tap;
             flavor = "hold-preferred";
         };
 
@@ -108,7 +108,7 @@
 
             tapping-term-ms = <200>;
             quick-tap-ms = <150>;
-            global-quick-tap;
+            //global-quick-tap;
             flavor = "tap-preferred";
         };
 
@@ -121,7 +121,7 @@
             flavor = "balanced";
             tapping-term-ms = <180>;
             quick-tap-ms = <175>;                // repeat on tap-into-hold
-            global-quick-tap-ms = <150>;         // requires PR #1387
+            require-prior-idle-ms = <150>;         // requires PR #1387
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_R THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
@@ -136,7 +136,7 @@
             flavor = "balanced";
             tapping-term-ms = <180>;
             quick-tap-ms = <175>;                // repeat on tap-into-hold
-            global-quick-tap-ms = <150>;         // requires PR #1387
+            require-prior-idle-ms = <150>;         // requires PR #1387
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;             // delay positional check until key-release
