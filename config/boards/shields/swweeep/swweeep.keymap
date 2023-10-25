@@ -12,11 +12,11 @@
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                      // thumb keys
 
 #define DEFAULT 0
-#define SPACESWAP 1
-#define RAISE   2
-#define LOWER   4
-#define MEDIA   6
-#define ADJUST  8
+#define RAISE   1
+#define LOWER   2
+#define MEDIA   3
+#define ADJUST  4
+#define SPACESWAP 5
 
 
 / {
