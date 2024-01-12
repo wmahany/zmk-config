@@ -35,7 +35,7 @@
             #binding-cells = <1>;
             bindings = <&kp>;
 
-            release-after-ms = <1000>;
+            release-after-ms = <500>;
             quick-release;
         };
 
