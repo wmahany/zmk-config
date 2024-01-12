@@ -124,7 +124,7 @@
             quick-tap-ms = <175>;                // repeat on tap-into-hold
             require-prior-idle-ms = <150>;         // requires PR #1387
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>; // play around wit this to maybe improve the feeling of ctrl+delete after fast typing
             hold-trigger-on-release;             // delay positional check until key-release
         };
 
@@ -139,7 +139,7 @@
             quick-tap-ms = <175>;                // repeat on tap-into-hold
             require-prior-idle-ms = <150>;         // requires PR #1387
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>; // play around wit this to maybe improve the feeling of ctrl+delete after fast typing
             hold-trigger-on-release;             // delay positional check until key-release
         };
 
@@ -167,7 +167,7 @@
                 &kp W         &kp L         &kp Y        &kp P           &kp B                                                   &kp Z          &kp F        &kp O           &kp U          &kp APOS
                 &kp C         &kp R         &kp S        &kp T           &kp G                                                   &kp M          &kp N        &kp E           &kp I          &kp A
                 &hml LSHIFT Q &hml LGUI J   &hml LALT V  &hml  LCTL D    &kp K                                                   &kp X          &hmr RCTL H  &hmr RALT COMMA &hmr RGUI DOT  &hmr RSHIFT SLASH
-                                                         &mlt LOWER ESC  &kp SPACE &hpt LGUI TAB             &tplt MEDIA ENTER   &skq LSFT      &hpt RAISE BSPC
+                                                         &mlt LOWER ESC  &kp SPACE &hpt LGUI TAB             &tplt MEDIA ENTER   &skq LSFT      &mlt RAISE BSPC
             >;
         };
 
@@ -211,7 +211,7 @@
                     bindings = <
                         &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_CLR                       &mwh SCROLL_LEFT  &mwh SCROLL_DOWN  &mwh SCROLL_UP  &mwh SCROLL_RIGHT &trans
                         &trans       &trans        &trans        &trans       &trans                           &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT   &kp MINUS
-                        &trans       &trans        &trans        &trans       &trans                           &trans            &mkp LCLK         &mkp MCLK       &mkp RCLK         &trans
+                        &trans        &trans        &trans       &trans                           &trans            &mkp LCLK         &mkp MCLK       &mkp RCLK         &trans
                                                                 &trans       &trans      &trans      &trans   &trans             &trans
                     >;
                 };
