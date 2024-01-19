@@ -30,9 +30,8 @@
         shift_macro: shift_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_tap &skq LSHFT>
-                ;
+            bindings = <&skq LSHFT>;
+            label = "SHIFT_MACRO";
         };
 
     };
