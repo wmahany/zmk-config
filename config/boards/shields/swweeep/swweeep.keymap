@@ -42,7 +42,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             bindings = <&shift_macro>, <&kp CAPS>;
-            label = "SHIFT-MACRO-TAP-DANCE"
+            label = "SHIFT-MACRO-TAP-DANCE";
         };
 
 
