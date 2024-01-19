@@ -37,13 +37,14 @@
 
     };
 
-    shft_m_td: shift_macro_tap_dance {
-        compatible = "zmk,behavior-tap-dance";
-        #binding-cells = <0>;
-        bindings = <&shift_macro>, <&kp CAPS>;
-        label = "SHIFT-MACRO-TAP-DANCE"
-    }
     behaviors {
+        shft_m_td: shift_macro_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            bindings = <&shift_macro>, <&kp CAPS>;
+            label = "SHIFT-MACRO-TAP-DANCE"
+        };
+
 
         skq: sticky_key_quick_release {
             compatible = "zmk,behavior-sticky-key";
