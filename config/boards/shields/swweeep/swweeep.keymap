@@ -173,7 +173,8 @@
                 &kp W         &kp L         &kp Y        &kp P           &kp B                                                   &kp Z          &kp F        &kp O           &kp U          &kp APOS
                 &kp C         &kp R         &kp S        &kp T           &kp G                                                   &kp M          &kp N        &kp E           &kp I          &kp A
                 &hml LSHIFT Q &hml LGUI J   &hml LALT V  &hml  LCTL D    &kp K                                                   &kp X          &hmr RCTL H  &hmr RALT COMMA &hmr RGUI DOT  &hmr RSHIFT SLASH
-                                                    &mlt LOWER ESC  &shft_m_td  &hpt LGUI TAB          &kp ENTER   &tplt MEDIA SPACE  &mlt RAISE BSPC
+                                                    &mlt LOWER ESC  &skq LSHFT  &hpt LGUI TAB          &kp ENTER   &tplt MEDIA SPACE  &mlt RAISE BSPC
+                                                                  //&shft_m_td
             >;
         };
 
