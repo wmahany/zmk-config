@@ -3,6 +3,15 @@
 
 #include <dt-bindings/zmk/mouse.h>
 
+#undef SCROLL_UP
+#undef SCROLL_DOWN
+#undef SCROLL_LEFT
+#undef SCROLL_RIGHT
+#define M_WH_U SCROLL_Y(U_MOUSE_SCROLL_MAX)
+#define M_WH_D SCROLL_Y(-U_MOUSE_SCROLL_MAX)
+#define M_WH_L SCROLL_X(-U_MOUSE_SCROLL_MAX)
+#define M_WH_R SCROLL_X(U_MOUSE_SCROLL_MAX)
+
 &mmv {
   acceleration-exponent = <1>;      // 1
   time-to-max-speed-ms = <500>;    // 1500
@@ -14,3 +23,4 @@
   time-to-max-speed-ms = <40>;      // 5000
   delay-ms = <0>;                   // 10
 };
+
