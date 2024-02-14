@@ -17,7 +17,14 @@
 #define MEDIA   3
 #define MOUSE  4
 
-
+// tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift
+ZMK_BEHAVIOR(smart_shft, mod_morph,
+    bindings = <&sk LSHFT>, <&caps_word>;
+    mods = <(MOD_LSFT)>;
+)
+&caps_word {  // mods deactivate caps-word, requires PR #1451
+    /delete-property/ ignore-modifiers;
+};
 / {
     conditional_layers {
             compatible = "zmk,conditional-layers";
@@ -219,9 +226,9 @@
                 // &trans       &trans        &trans        &trans       &trans                           &trans            &mkp LCLK         &mkp MCLK       &mkp RCLK         &trans //mkp
                 //                                          &trans       &trans      &trans      &trans   &trans             &trans
 
-                &trans       &trans        &trans        &trans       &trans                           &mwh SCROLL_LEFT  &mwh SCROLL_DOWN  &mwh SCROLL_UP  &mwh SCROLL_RIGHT &trans
-                &trans       &trans        &trans        &trans       &trans                           &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT   &kp MINUS
-                &trans       &trans        &trans        &trans       &trans                           &trans            &mkp LCLK         &mkp MCLK       &mkp RCLK         &trans
+                &trans       &trans        &trans        &trans       &trans                           &trans       &trans        &trans        &trans       &trans
+                &trans       &trans        &trans        &trans       &trans                           &trans       &trans        &trans        &trans       &trans
+                &trans       &trans        &trans        &trans       &trans                           &trans       &trans        &trans        &trans       &trans
                                                          &trans       &trans      &trans      &trans   &trans       &trans
             >;
         };
