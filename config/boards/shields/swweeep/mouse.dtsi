@@ -7,10 +7,19 @@
 #undef SCROLL_DOWN
 #undef SCROLL_LEFT
 #undef SCROLL_RIGHT
-#define M_WH_U SCROLL_Y(U_MOUSE_SCROLL_MAX)
-#define M_WH_D SCROLL_Y(-U_MOUSE_SCROLL_MAX)
-#define M_WH_L SCROLL_X(-U_MOUSE_SCROLL_MAX)
-#define M_WH_R SCROLL_X(U_MOUSE_SCROLL_MAX)
+#define WH_U SCROLL_Y(U_MOUSE_SCROLL_MAX)
+#define WH_D SCROLL_Y(-U_MOUSE_SCROLL_MAX)
+#define WH_L SCROLL_X(-U_MOUSE_SCROLL_MAX)
+#define WH_R SCROLL_X(U_MOUSE_SCROLL_MAX)
+
+#undef MOVE_UP
+#undef MOVE_DOWN
+#undef MOVE_LEFT
+#undef MOVE_RIGHT
+#define MV_U MOVE_Y(U_MOUSE_MOVE_MAX)
+#define MV_D MOVE_Y(-U_MOUSE_MOVE_MAX)
+#define MV_L MOVE_X(-U_MOUSE_MOVE_MAX)
+#define MV_R MOVE_X(U_MOUSE_MOVE_MAX)
 
 &mmv {
   acceleration-exponent = <1>;      // 1
