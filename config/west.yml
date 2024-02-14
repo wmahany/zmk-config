@@ -8,9 +8,6 @@ manifest:
     - name: zmk
       remote: urob
       revision: main
-=======
-      remote: urob
-      revision: main
       import: app/west.yml
   self:
     path: config
