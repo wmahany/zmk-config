@@ -2,12 +2,17 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: petejohanson
-      url-base: https://github.com/petejohanson
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
+<<<<<<< HEAD
+      remote: urob
+      revision: main
+=======
       remote: petejohanson
-      revision: feat/pointers-move-scroll
+      revision: pointers-move-scroll
+>>>>>>> parent of d209497 (Tweaking west.yml)
       import: app/west.yml
   self:
     path: config
