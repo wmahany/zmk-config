@@ -44,7 +44,7 @@
         // tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift
         smart_shft: mod_morph {
             compatible = "zmk,behavior-mod-morph";
-            bindings = <&sk LSHFT>, <&caps_word>;
+            bindings = <&skq LSHFT>, <&caps_word>;
             mods = <(MOD_LSFT)>;
             #binding-cells = <0>;
        };
