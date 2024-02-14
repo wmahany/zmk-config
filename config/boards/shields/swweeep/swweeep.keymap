@@ -46,6 +46,7 @@
             compatible = "zmk,mod_morph";
             bindings = <&sk LSHFT>, <&caps_word>;
             mods = <(MOD_LSFT)>;
+            #binding-cells = <0>;
        };
 
         shft_m_td: shift_macro_tap_dance {
