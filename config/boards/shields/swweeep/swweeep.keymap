@@ -228,10 +228,10 @@
 
             bindings = <
 
-                &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &trans       &bt BT_CLR                       M_WH_L    M_WH_D      M_WH_U     M_WH_R     &trans
-                &trans       &trans        &trans        &trans       &trans                           M_MV_L    M_MV_D      M_MV_U     M_MV_R     &kp MINUS
-                &trans       &trans        &trans        &trans       &trans                           &trans    &mkp LCLK   &mkp MCLK  &mkp RCLK  &trans
-                                                         &trans       &trans      &trans      &trans   &trans    &trans
+                &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &trans       &bt BT_CLR                       &msc WH_L  &msc WH_D  &msc WH_U  &msc WH_R   &trans
+                &trans       &trans        &trans        &trans       &trans                           &mmv MV_L  &mmv MV_D  &mmv MV_U  &mmv MV_R   &kp MINUS
+                &trans       &trans        &trans        &trans       &trans                           &trans     &mkp LCLK  &mkp MCLK  &mkp RCLK   &trans
+                                                         &trans       &trans      &trans      &trans   &trans     &trans
             >;
         };
 
