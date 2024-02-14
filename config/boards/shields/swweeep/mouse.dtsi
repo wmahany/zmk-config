@@ -1,20 +1,5 @@
 #include <dt-bindings/zmk/mouse.h>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-#undef SCROLL_UP
-#undef SCROLL_DOWN
-#undef SCROLL_LEFT
-#undef SCROLL_RIGHT
-#define M_WH_U SCROLL_Y(U_MOUSE_SCROLL_MAX)
-#define M_WH_D SCROLL_Y(-U_MOUSE_SCROLL_MAX)
-#define M_WH_L SCROLL_X(-U_MOUSE_SCROLL_MAX)
-#define M_WH_R SCROLL_X(U_MOUSE_SCROLL_MAX)
-
->>>>>>> parent of d209497 (Tweaking west.yml)
-=======
->>>>>>> parent of 9939548 (Trying 'official mouse patch' now)
 &mmv {
   acceleration-exponent = <1>;      // 1
   time-to-max-speed-ms = <1500>;    // 40
@@ -25,12 +10,8 @@
   acceleration-exponent = <1>;      // 0
   time-to-max-speed-ms = <5000>;    // 40
   delay-ms = <0>;                   // 10
-};
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of f00bf3e (trying out using the #define in mouse.dtsi)
 
+};
 #define U_MOUSE_MOVE_MAX 1250       // 600
 #define U_MOUSE_SCROLL_MAX 100      // 10
 
@@ -63,8 +44,3 @@
 // #define U_WH_D &mwh SCROLL_DOWN
 // #define U_WH_L &mwh SCROLL_LEFT
 // #define U_WH_R &mwh SCROLL_RIGHT
-<<<<<<< HEAD
-=======
->>>>>>> parent of 9939548 (Trying 'official mouse patch' now)
-=======
->>>>>>> parent of f00bf3e (trying out using the #define in mouse.dtsi)

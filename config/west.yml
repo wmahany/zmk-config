@@ -6,18 +6,11 @@ manifest:
       url-base: https://github.com/urob
   projects:
     - name: zmk
-<<<<<<< HEAD
-<<<<<<< HEAD
       remote: urob
       revision: main
 =======
-      remote: petejohanson
-      revision: pointers-move-scroll
->>>>>>> parent of d209497 (Tweaking west.yml)
-=======
       remote: urob
       revision: main
->>>>>>> parent of 9939548 (Trying 'official mouse patch' now)
       import: app/west.yml
   self:
     path: config
