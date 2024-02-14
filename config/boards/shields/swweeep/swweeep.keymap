@@ -17,11 +17,6 @@
 #define MEDIA   3
 #define MOUSE  4
 
-// tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift
-ZMK_BEHAVIOR(smart_shft, mod_morph,
-    bindings = <&sk LSHFT>, <&caps_word>;
-    mods = <(MOD_LSFT)>;
-)
 &caps_word {  // mods deactivate caps-word, requires PR #1451
     /delete-property/ ignore-modifiers;
 };
@@ -45,6 +40,18 @@ ZMK_BEHAVIOR(smart_shft, mod_morph,
     };
 
     behaviors {
+
+        // &caps_word {  // mods deactivate caps-word, requires PR #1451
+        //     /delete-property/ ignore-modifiers;
+        // };
+
+        // tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift
+        smart_shft: mod_morph {
+            compatible = "zmk,mod_morph";
+            bindings = <&sk LSHFT>, <&caps_word>;
+            mods = <(MOD_LSFT)>;
+       };
+
         shft_m_td: shift_macro_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
