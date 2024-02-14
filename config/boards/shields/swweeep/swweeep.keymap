@@ -2,8 +2,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/mouse.h> // This is defind in mouse.dtsi
-// #include "mouse.dtsi" //this is for urobs branch
+// #include <dt-bindings/zmk/mouse.h> // This is defind in mouse.dtsi
+#include "mouse.dtsi" //this is for urobs branch
 
 /* use helper macros to define left and right hand keys */
 #include "../zmk-nodefree-config/keypos_def/keypos_36keys.h"                // keyposition helpers
@@ -51,17 +51,6 @@
        //      #binding-cells = <0>;
        // };
 
-        &mmv {
-            acceleration-exponent = <1>;      // 1
-            time-to-max-speed-ms = <1500>;    // 40
-            delay-ms = <0>;                   // 0
-        };
-
-        &msc {
-            acceleration-exponent = <1>;      // 0
-            time-to-max-speed-ms = <5000>;    // 40
-            delay-ms = <0>;                   // 10
-        };
         shft_m_td: shift_macro_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
