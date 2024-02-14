@@ -227,16 +227,22 @@
             bindings = <
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of f00bf3e (trying out using the #define in mouse.dtsi)
                 &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &trans       &bt BT_CLR                       &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT &trans
                 &trans       &trans        &trans        &trans       &trans                           &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT   &kp MINUS
                 &trans       &trans        &trans        &trans       &trans                           &trans       &mkp LCLK         &mkp MCLK       &mkp RCLK         &trans
                                                          &trans       &trans      &trans      &trans   &trans       &trans
+<<<<<<< HEAD
 =======
                 &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &trans       &bt BT_CLR                       M_WH_L    M_WH_D      M_WH_U     M_WH_R     &trans
                 &trans       &trans        &trans        &trans       &trans                           M_MV_L    M_MV_D      M_MV_U     M_MV_R     &kp MINUS
                 &trans       &trans        &trans        &trans       &trans                           &trans    &mkp LCLK   &mkp MCLK  &mkp RCLK  &trans
                                                          &trans       &trans      &trans      &trans   &trans    &trans
 >>>>>>> parent of 9939548 (Trying 'official mouse patch' now)
+=======
+>>>>>>> parent of f00bf3e (trying out using the #define in mouse.dtsi)
             >;
         };
 
