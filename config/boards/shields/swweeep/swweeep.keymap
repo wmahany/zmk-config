@@ -41,10 +41,6 @@
 
     behaviors {
 
-        // &caps_word {  // mods deactivate caps-word, requires PR #1451
-        //     /delete-property/ ignore-modifiers;
-        // };
-
         // tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift
         smart_shft: mod_morph {
             compatible = "zmk,mod_morph";
@@ -187,7 +183,7 @@
                 &kp W         &kp L         &kp Y        &kp P           &kp B                                               &kp Z              &kp F        &kp O           &kp U          &kp APOS
                 &kp C         &kp R         &kp S        &kp T           &kp G                                               &kp M              &kp N        &kp E           &kp I          &kp A
                 &hml LSHIFT Q &hml LGUI J   &hml LALT V  &hml  LCTL D    &kp K                                               &kp X              &hmr RCTL H  &hmr RALT COMMA &hmr RGUI DOT  &hmr RSHIFT SLASH
-                                                        &mlt NUMPAD ESC  &shft_m_td  &hpt LGUI TAB          &kp ENTER        &tplt MEDIA SPACE  &mlt NAV BSPC
+                                                        &mlt NUMPAD ESC  &smart_shft  &hpt LGUI TAB          &kp ENTER        &tplt MEDIA SPACE  &mlt NAV BSPC
             >;
         };
 
