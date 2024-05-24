@@ -200,6 +200,18 @@
         /*         >; */
         /* }; */
 
+        /* Gallium with my punctuation */
+        /* galliumv2_layer { */
+        /*     label = "GALLIUM"; */
+
+        /*     bindings = < */
+        /*         &kp B           &kp L          &kp D            &kp C            &kp V                                          &kp J              &kp F          &kp O            &kp U              &kp APOS */
+        /*         &kp N           &kp R          &kp T            &kp S            &kp G                                          &kp Y              &kp H          &kp A            &kp E              &kp I */
+        /*         &hml LSHIFT X   &hml LGUI Q    &hml LALT M      &hml LCTL W      &kp Z                                          &kp K              &hmr RCTL P    &hmr RALT COMMA   &hmr RGUI DOT    &hmr RSHIFT SLASH */
+        /*                                        &mlt NUMPAD ESC  &skq LSHFT       &hpt LGUI TAB                     &kp ENTER    &tplt MEDIA SPACE  &mlt NAV BSPC */
+        /*         >; */
+        /* }; */
+
         nav_layer {
            label = "NAV";
 
