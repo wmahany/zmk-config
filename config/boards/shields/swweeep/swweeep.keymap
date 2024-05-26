@@ -12,11 +12,10 @@
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                      // thumb keys
 
 #define ALPHA 0
-#define GALLIUM 1
-#define NAV   2
-#define NUMPAD   3
-#define MEDIA   4
-#define MOUSE  5
+#define NAV   1
+#define NUMPAD   2
+#define MEDIA   3
+#define MOUSE  4
 
 &caps_word {  // mods deactivate caps-word, requires PR #1451
     /delete-property/ ignore-modifiers;
@@ -189,17 +188,19 @@
             >;
         };
 
-        /* Gallium with standard punctuation location, with colon swapped for ?*/
-        gallium_layer {
-            label = "GALLIUM";
+        /* Gallium with standard punctuation location, with colon swapped for ? */
+        /* If I use gallium at all, I'll likely not use v2, as the creator said v1
+           was for colstag and v2 was for rowstag */
+        /* gallium_layer { */
+        /*     label = "GALLIUM"; */
 
-            bindings = <
-                &kp B           &kp L          &kp D            &kp C            &kp V                                          &kp J              &kp F          &kp O            &kp U              &kp COMMA
-                &kp N           &kp R          &kp T            &kp S            &kp G                                          &kp Y              &kp H          &kp A            &kp E              &kp I
-                &hml LSHIFT X   &hml LGUI Q    &hml LALT M      &hml LCTL W      &kp Z                                          &kp K              &hmr RCTL P    &hmr RALT APOS   &hmr RGUI SLASH    &hmr RSHIFT DOT
-                                               &mlt NUMPAD ESC  &skq LSHFT       &hpt LGUI TAB                     &kp ENTER    &tplt MEDIA SPACE  &mlt NAV BSPC
-                >;
-        };
+        /*     bindings = < */
+        /*         &kp B           &kp L          &kp D            &kp C            &kp V                                          &kp J              &kp F          &kp O            &kp U              &kp COMMA */
+        /*         &kp N           &kp R          &kp T            &kp S            &kp G                                          &kp Y              &kp H          &kp A            &kp E              &kp I */
+        /*         &hml LSHIFT X   &hml LGUI Q    &hml LALT M      &hml LCTL W      &kp Z                                          &kp K              &hmr RCTL P    &hmr RALT APOS   &hmr RGUI SLASH    &hmr RSHIFT DOT */
+        /*                                        &mlt NUMPAD ESC  &skq LSHFT       &hpt LGUI TAB                     &kp ENTER    &tplt MEDIA SPACE  &mlt NAV BSPC */
+        /*         >; */
+        /* }; */
 
         /* Gallium with my punctuation */
         /* galliumv2_layer { */
@@ -253,7 +254,7 @@
 
                 &bt BT_SEL 0 &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_CLR                       &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT &trans
                 &trans       &trans          &trans        &trans       &trans                           &mmv MOVE_LEFT    &mmv MOVE_DOWN    &mmv MOVE_UP    &mmv MOVE_RIGHT   &kp MINUS
-                &tog ALPHA   &tog GALLIUM  &trans        &trans       &trans                           &trans       &mkp LCLK         &mkp MCLK       &mkp RCLK         &trans
+                &trans       &trans          &trans        &trans       &trans                           &trans       &mkp LCLK         &mkp MCLK       &mkp RCLK         &trans
                                                          &trans       &trans      &trans      &trans   &trans       &trans
            >;
         };
