@@ -14,10 +14,10 @@
 #define ALPHA 0
 #define GALLIUMv1 1
 #define GALLIUMv2 2
-#define NAV   3
-#define NUMPAD   4
-#define MEDIA   5
-#define MOUSE  6
+#define NAV 3
+#define NUMPAD 4
+#define MEDIA 5
+#define MOUSE 6
 
 &caps_word {  // mods deactivate caps-word, requires PR #1451
     /delete-property/ ignore-modifiers;
