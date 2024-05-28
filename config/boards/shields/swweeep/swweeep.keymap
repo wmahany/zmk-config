@@ -197,9 +197,9 @@
             label = "GALLIUMv1";
 
             bindings = <
-                &kp B           &kp L          &kp D            &kp C            &kp V                                          &kp J              &kp Y          &kp O            &kp U              &kp COMMA
+                &kp B           &kp L          &kp D            &kp C            &kp V                                          &kp J              &kp Y          &kp O            &kp U              &kp APOS
                 &kp N           &kp R          &kp T            &kp S            &kp G                                          &kp P              &kp H          &kp A            &kp E              &kp I
-                &hml LSHIFT Q   &hml LGUI X    &hml LALT M      &hml LCTL W      &kp J                                          &kp K              &hmr RCTL F    &hmr RALT APOS   &hmr RGUI SLASH    &hmr RSHIFT DOT
+                &hml LSHIFT Q   &hml LGUI X    &hml LALT M      &hml LCTL W      &kp J                                          &kp K              &hmr RCTL F    &hmr RALT COMMA  &hmr RGUI DOT      &hmr RSHIFT SLASH
                                                &mlt NUM ESC  &skq LSHFT       &hpt LGUI TAB                     &kp ENTER    &tplt MEDIA SPACE  &mlt NAV BSPC
                 >;
         };
