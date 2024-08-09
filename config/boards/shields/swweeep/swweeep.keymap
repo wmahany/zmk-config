@@ -11,9 +11,9 @@
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right-hand keys
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                      // thumb keys
 
-#define ALPHA 0
-#define GALLIUMv1 1
-#define GALCUST 2
+#define GALCUST 0
+#define ALPHA 1
+#define GALLIUMv1 2
 #define CANLSPC 3
 #define NAV 4
 #define NUM 5
@@ -180,6 +180,18 @@
     keymap {
         compatible = "zmk,keymap";
 
+        /* Galliumv2 with my punctuation and some customizations */
+        gallium_custom_layer {
+            label = "GALCUST";
+
+            bindings = <
+                &kp B           &kp L          &kp D            &kp C            &kp V                                          &kp Z              &kp Y          &kp O            &kp U              &kp APOS
+                &kp N           &kp R          &kp T            &kp S            &kp G                                          &kp P              &kp H          &kp A            &kp E              &kp I
+               &hml LSHIFT Q   &hml LGUI X    &hml LALT M      &hml LCTL W      &kp J                                        &kp K              &hmr RCTL F    &hmr RALT COMMA   &hmr RGUI DOT    &hmr RSHIFT SLASH
+                                               &mlt NUM ESC  &skq LSHFT       &hpt LGUI TAB                     &kp ENTER    &tplt MEDIA SPACE  &mlt NAV BSPC
+                >;
+        };
+
         default_layer {
             label = "ALPHA";
 
@@ -205,17 +217,6 @@
                 >;
         };
 
-        /* Galliumv2 with my punctuation and some customizations */
-        gallium_custom_layer {
-            label = "GALCUST";
-
-            bindings = <
-                &kp B           &kp L          &kp D            &kp C            &kp V                                          &kp Z              &kp F          &kp O            &kp U              &kp APOS
-                &kp N           &kp R          &kp T            &kp S            &kp G                                          &kp P              &kp H          &kp A            &kp E              &kp I
-               &hml LSHIFT Q   &hml LGUI X    &hml LALT M      &hml LCTL W      &kp J                                        &kp K              &hmr RCTL Y    &hmr RALT COMMA   &hmr RGUI DOT    &hmr RSHIFT SLASH
-                                               &mlt NUM ESC  &skq LSHFT       &hpt LGUI TAB                     &kp ENTER    &tplt MEDIA SPACE  &mlt NAV BSPC
-                >;
-        };
 
         /* Canary with space on th left so hopefully help out my right hand */
         canary_left_space {
