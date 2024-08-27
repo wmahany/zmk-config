@@ -20,9 +20,6 @@
 #define MEDIA 6
 #define MOUSE 7
 
-&caps_word {  // mods deactivate caps-word, requires PR #1451
-    /delete-property/ ignore-modifiers;
-};
 / {
     conditional_layers {
             compatible = "zmk,conditional-layers";
@@ -55,7 +52,7 @@
         sm_td: shift_macro_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&skq LSHFT>, <CAPSLOCK>;
+            bindings = <&skq LSHFT>, <&caps_word>;
             label = "SHIFT-MACRO-TAP-DANCE";
         };
 
