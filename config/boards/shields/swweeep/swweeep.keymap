@@ -52,10 +52,10 @@
        //      #binding-cells = <0>;
        // };
 
-        shft_m_td: shift_macro_tap_dance {
+        sm_td: shift_macro_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&shift_macro>, <&skq LSHFT>;
+            bindings = <&skq LSHFT>, <CAPSLOCK>;
             label = "SHIFT-MACRO-TAP-DANCE";
         };
 
