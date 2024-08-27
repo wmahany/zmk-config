@@ -44,13 +44,20 @@
 
     behaviors {
 
-        // tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift
-       //  smart_shft: mod_morph {
-       //      compatible = "zmk,behavior-mod-morph";
-       //      bindings = <&skq LSHFT>, <&caps_word>;
-       //      mods = <(MOD_LSFT)>;
-       //      #binding-cells = <0>;
-       // };
+       /*  tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift */
+       /*  smart_shft: mod_morph { */
+       /*      compatible = "zmk,behavior-mod-morph"; */
+       /*      bindings = <&skq LSHFT>, <&caps_word>; */
+       /*      mods = <(MOD_LSFT)>; */
+       /*      #binding-cells = <0>; */
+       /* }; */
+
+        td_mt: tap_dance_mod_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&skq LSHIFT>, <&kp CAPSLOCK>;
+        };
 
         shft_m_td: shift_macro_tap_dance {
             compatible = "zmk,behavior-tap-dance";
@@ -65,7 +72,6 @@
             label = "STICKY_KEY_QUICK_RELEASE";
             #binding-cells = <1>;
             bindings = <&kp>;
-
             release-after-ms = <500>;
             quick-release;
         };
