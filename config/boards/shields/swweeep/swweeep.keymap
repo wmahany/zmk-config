@@ -49,11 +49,11 @@
        //      #binding-cells = <0>;
        // };
 
-        sm_td: shift_macro_tap_dance {
+        ss_td: sticky_shift_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
+            tapping-term-ms = <200>;
             bindings = <&skq LSHFT>, <&caps_word>;
-            label = "SHIFT-MACRO-TAP-DANCE";
         };
 
 
@@ -185,7 +185,7 @@
                 &kp B           &kp L          &kp D            &kp C            &kp V                                          &kp Z              &kp F          &kp O            &kp U              &kp APOS
                 &kp N           &kp R          &kp T            &kp S            &kp G                                          &kp P              &kp H          &kp A            &kp E              &kp I
                 &hml LSHIFT Q   &hml LGUI X    &hml LALT M      &hml LCTL W      &kp J                                        &kp K              &hmr RCTL Y    &hmr RALT COMMA   &hmr RGUI DOT    &hmr RSHIFT SLASH
-                                               &mlt NUM ESC     &skq LSHFT           &hpt LGUI TAB                     &kp ENTER    &tplt MEDIA SPACE  &mlt NAV BSPC
+                                               &mlt NUM ESC     &ss_td           &hpt LGUI TAB                     &kp ENTER    &tplt MEDIA SPACE  &mlt NAV BSPC
                 >;
         };
 
