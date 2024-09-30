@@ -198,21 +198,17 @@
                 &kp B           &kp L          &kp D            &kp C            &kp V                                          &kp Z              &kp F          &kp O            &kp U              &kp APOS
                 &kp N           &kp R          &kp T            &kp S            &kp G                                          &kp P              &kp H          &kp A            &kp E              &kp I
                 &hml LSHIFT Q   &hml LGUI X    &hml LALT M      &hml LCTL W      &kp J                                        &kp K              &hmr RCTL Y    &hmr RALT COMMA   &hmr RGUI DOT    &hmr RSHIFT SLASH
-<<<<<<< HEAD
-                                               &mlt NUM ESC     &td_mt           &hpt LGUI TAB                     &kp ENTER    &tplt MEDIA SPACE  &mlt NAV BSPC
-=======
                                                &mlt NUM ESC     &ss_td           &hpt LGUI TAB                     &kp ENTER    &tplt MEDIA SPACE  &mlt NAV BSPC
->>>>>>> origin/master
                 >;
         };
 
         default_layer {
-            label = "ALPHA";
+            label = "QWERTY";
 
             bindings = <
-                &kp W         &kp L         &kp Y        &kp P           &kp B                                               &kp Z              &kp F        &kp O           &kp U          &kp APOS
-                &kp C         &kp R         &kp S        &kp T           &kp G                                               &kp M              &kp N        &kp E           &kp I          &kp A
-                &hml LSHIFT Q &hml LGUI J   &hml LALT V  &hml  LCTL D    &kp K                                               &kp X              &hmr RCTL H  &hmr RALT COMMA &hmr RGUI DOT  &hmr RSHIFT SLASH
+                &kp Q         &kp W         &kp E        &kp R           &kp T                                               &kp Y              &kp U        &kp I           &kp O          &kp P
+                &kp A         &kp S         &kp D        &kp F           &kp G                                               &kp H              &kp J        &kp K           &kp L          &kp APOS
+                &hml LSHIFT Z &hml LGUI X   &hml LALT C  &hml  LCTL V    &kp B                                               &kp N              &hmr RCTL M  &hmr RALT COMMA &hmr RGUI DOT  &hmr RSHIFT SLASH
                                                         &mlt NUM ESC  &skq LSHFT  &hpt LGUI TAB          &kp ENTER        &tplt MEDIA SPACE  &mlt NAV BSPC
             >;
         };
