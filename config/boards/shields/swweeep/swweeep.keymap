@@ -20,9 +20,6 @@
 #define MEDIA 6
 #define MOUSE 7
 
-&caps_word {  // mods deactivate caps-word, requires PR #1451
-    /delete-property/ ignore-modifiers;
-};
 / {
     conditional_layers {
             compatible = "zmk,conditional-layers";
@@ -59,13 +56,20 @@
             bindings = <&skq LSHIFT>, <&kp CAPSLOCK>;
         };
 
-        shft_m_td: shift_macro_tap_dance {
+        ss_td: sticky_shift_tap_dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            bindings = <&shift_macro>, <&skq LSHFT>;
-            label = "SHIFT-MACRO-TAP-DANCE";
+            tapping-term-ms = <200>;
+            bindings = <&skq LSHFT>, <&kp CAPSLOCK>;
         };
 
+        /* ct: capslock_toggle { */
+        /*     compatible = "zmk,behavior-hold-tap"; */
+        /*     #binding-cells = <2> */
+        /*     tapping-term-ms = <200>; */
+        /*     flavor = "tap-preferred" */
+        /*     bindings = <&kp>, <&kp>; */
+        /* }; */
 
         skq: sticky_key_quick_release {
             compatible = "zmk,behavior-sticky-key";
@@ -194,7 +198,11 @@
                 &kp B           &kp L          &kp D            &kp C            &kp V                                          &kp Z              &kp F          &kp O            &kp U              &kp APOS
                 &kp N           &kp R          &kp T            &kp S            &kp G                                          &kp P              &kp H          &kp A            &kp E              &kp I
                 &hml LSHIFT Q   &hml LGUI X    &hml LALT M      &hml LCTL W      &kp J                                        &kp K              &hmr RCTL Y    &hmr RALT COMMA   &hmr RGUI DOT    &hmr RSHIFT SLASH
+<<<<<<< HEAD
                                                &mlt NUM ESC     &td_mt           &hpt LGUI TAB                     &kp ENTER    &tplt MEDIA SPACE  &mlt NAV BSPC
+=======
+                                               &mlt NUM ESC     &ss_td           &hpt LGUI TAB                     &kp ENTER    &tplt MEDIA SPACE  &mlt NAV BSPC
+>>>>>>> origin/master
                 >;
         };
 
