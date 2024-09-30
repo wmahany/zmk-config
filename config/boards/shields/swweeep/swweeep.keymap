@@ -202,14 +202,14 @@
                 >;
         };
 
-        default_layer {
+        qwerty_layer {
             label = "QWERTY";
 
             bindings = <
                 &kp Q         &kp W         &kp E        &kp R           &kp T                                               &kp Y              &kp U        &kp I           &kp O          &kp P
                 &kp A         &kp S         &kp D        &kp F           &kp G                                               &kp H              &kp J        &kp K           &kp L          &kp APOS
                 &hml LSHIFT Z &hml LGUI X   &hml LALT C  &hml  LCTL V    &kp B                                               &kp N              &hmr RCTL M  &hmr RALT COMMA &hmr RGUI DOT  &hmr RSHIFT SLASH
-                                                        &mlt NUM ESC  &skq LSHFT  &hpt LGUI TAB          &kp ENTER        &tplt MEDIA SPACE  &mlt NAV BSPC
+                                                        &mlt NUM ESC     &ss_td  &hpt LGUI TAB          &kp ENTER        &tplt MEDIA SPACE  &mlt NAV BSPC
             >;
         };
 
