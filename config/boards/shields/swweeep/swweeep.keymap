@@ -12,7 +12,7 @@
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                      // thumb keys
 
 #define GALCUST 0
-#define QWERTY 1
+#define ALPHA 1
 #define GALLIUMv1 2
 #define CANLSPC 3
 #define NAV 4
