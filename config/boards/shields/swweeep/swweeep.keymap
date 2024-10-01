@@ -190,7 +190,7 @@
         compatible = "zmk,keymap";
 
         /* Gallium with my punctuation and J-Z and F-Y swap*/
-        gallium {
+        gallium_layer {
             label = "GALLIUM";
 
             bindings = <
@@ -201,7 +201,7 @@
                 >;
         };
 
-        colemak {
+        colemak_layer {
             label = "COLEMAK";
 
             bindings = <
@@ -212,7 +212,7 @@
             >;
         };
 
-        qwerty {
+        qwerty_layer {
             label = "QWERTY";
 
             bindings = <
@@ -222,22 +222,6 @@
                                                         &mlt NUM ESC     &ss_td  &hpt LGUI TAB          &kp ENTER        &tplt MEDIA SPACE  &mlt NAV BSPC
             >;
         };
-
-        /* Gallium with standard punctuation location, with colon swapped for ? */
-        /* If I use gallium at all, I'll likely not use v2, as the creator said v1
-           was for colstag and v2 was for rowstag */
-        gallium_layer {
-            label = "GALLIUMv1";
-
-            bindings = <
-                &kp B           &kp L          &kp D            &kp C            &kp V                                          &kp J              &kp Y          &kp O            &kp U              &kp APOS
-                &kp N           &kp R          &kp T            &kp S            &kp G                                          &kp P              &kp H          &kp A            &kp E              &kp I
-                &hml LSHIFT Q   &hml LGUI X    &hml LALT M      &hml LCTL W      &kp Z                                          &kp K              &hmr RCTL F    &hmr RALT COMMA  &hmr RGUI DOT      &hmr RSHIFT SLASH
-                                               &mlt NUM ESC  &skq LSHFT       &hpt LGUI TAB                     &kp ENTER    &tplt MEDIA SPACE  &mlt NAV BSPC
-                >;
-        };
-
-
 
         nav_layer {
            label = "NAV";
@@ -250,7 +234,7 @@
             >;
         };
 
-        sym_layer {
+        num_layer {
             label = "NUM";
 
             bindings = <
@@ -261,7 +245,7 @@
             >;
         };
 
-        func_layer {
+        media_layer {
             label = "MEDIA";
 
             bindings = <
@@ -272,7 +256,7 @@
             >;
         };
 
-        media_layer {
+        mouse_layer {
             label = "MOUSE";
 
             bindings = <
