@@ -11,21 +11,19 @@
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right-hand keys
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                      // thumb keys
 
-#define GALCUST 0
+#define GALLIUM 0
 #define ALPHA 1
-#define GALLIUMv1 2
-#define CANLSPC 3
-#define NAV 4
-#define NUM 5
-#define MEDIA 6
-#define MOUSE 7
+#define NAV 2
+#define NUM 3
+#define MEDIA 4
+#define MOUSE 5
 
 / {
     conditional_layers {
             compatible = "zmk,conditional-layers";
             tri_layer {
-                if-layers = <4 5>;
-                then-layer = <7>;
+                if-layers = <2 3>;
+                then-layer = <5>;
             };
         };
 
@@ -280,7 +278,7 @@
 
                 &bt BT_SEL 0 &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3 &bt BT_CLR                       &msc SCRL_LEFT   &msc SCRL_DOWN  &msc SCRL_UP   &msc SCRL_RIGHT   &trans
                 &trans       &trans          &trans          &trans       &trans                           &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT   &kp MINUS
-                &to ALPHA    &to GALLIUMv1   &to GALCUST     &to CANLSPC  &trans                           &trans           &mkp LCLK       &mkp MCLK      &mkp RCLK         &trans
+                &to ALPHA    &to GALCUST    &trans           &trans  &trans                           &trans           &mkp LCLK       &mkp MCLK      &mkp RCLK         &trans
                                                          &trans       &trans      &trans      &trans   &trans       &trans
            >;
         };
