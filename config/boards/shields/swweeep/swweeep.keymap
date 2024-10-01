@@ -12,18 +12,19 @@
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                      // thumb keys
 
 #define GALLIUM 0
-#define ALPHA 1
-#define NAV 2
-#define NUM 3
-#define MEDIA 4
-#define MOUSE 5
+#define COLEMAK 1
+#define QWERTY 2
+#define NAV 3
+#define NUM 4
+#define MEDIA 5
+#define MOUSE 6
 
 / {
     conditional_layers {
             compatible = "zmk,conditional-layers";
             tri_layer {
-                if-layers = <2 3>;
-                then-layer = <5>;
+                if-layers = <3 4>;
+                then-layer = <6>;
             };
         };
 
@@ -188,9 +189,9 @@
     keymap {
         compatible = "zmk,keymap";
 
-        /* Galliumv2 with my punctuation and some customizations */
-        gallium_custom_layer {
-            label = "GALCUST";
+        /* Gallium with my punctuation and J-Z and F-Y swap*/
+        gallium {
+            label = "GALLIUM";
 
             bindings = <
                 &kp B           &kp L          &kp D            &kp C            &kp V                                          &kp Z              &kp F          &kp O            &kp U              &kp APOS
@@ -200,7 +201,18 @@
                 >;
         };
 
-        qwerty_layer {
+        colemak {
+            label = "COLEMAK";
+
+            bindings = <
+                &kp Q         &kp W         &kp E        &kp R           &kp T                                               &kp Y              &kp U        &kp I           &kp O          &kp P
+                &kp A         &kp S         &kp D        &kp F           &kp G                                               &kp H              &kp J        &kp K           &kp L          &kp APOS
+                &hml LSHIFT Z &hml LGUI X   &hml LALT C  &hml  LCTL V    &kp B                                               &kp N              &hmr RCTL M  &hmr RALT COMMA &hmr RGUI DOT  &hmr RSHIFT SLASH
+                                                        &mlt NUM ESC     &ss_td  &hpt LGUI TAB          &kp ENTER        &tplt MEDIA SPACE  &mlt NAV BSPC
+            >;
+        };
+
+        qwerty {
             label = "QWERTY";
 
             bindings = <
@@ -278,7 +290,7 @@
 
                 &bt BT_SEL 0 &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3 &bt BT_CLR                       &msc SCRL_LEFT   &msc SCRL_DOWN  &msc SCRL_UP   &msc SCRL_RIGHT   &trans
                 &trans       &trans          &trans          &trans       &trans                           &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT   &kp MINUS
-                &to ALPHA    &to GALCUST    &trans           &trans  &trans                           &trans           &mkp LCLK       &mkp MCLK      &mkp RCLK         &trans
+                &to GALLIUM  &to COLEMAK     &to QWERTY      &trans       &trans                           &trans           &mkp LCLK       &mkp MCLK      &mkp RCLK         &trans
                                                          &trans       &trans      &trans      &trans   &trans       &trans
            >;
         };
