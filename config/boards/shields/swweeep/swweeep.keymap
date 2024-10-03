@@ -11,21 +11,20 @@
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right-hand keys
 #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                      // thumb keys
 
-#define GALCUST 0
-#define ALPHA 1
-#define GALLIUMv1 2
-#define CANLSPC 3
-#define NAV 4
-#define NUM 5
-#define MEDIA 6
-#define MOUSE 7
+#define GALLIUM 0
+#define COLEMAK 1
+#define QWERTY 2
+#define NAV 3
+#define NUM 4
+#define MEDIA 5
+#define MOUSE 6
 
 / {
     conditional_layers {
             compatible = "zmk,conditional-layers";
             tri_layer {
-                if-layers = <4 5>;
-                then-layer = <7>;
+                if-layers = <3 4>;
+                then-layer = <6>;
             };
         };
 
@@ -190,9 +189,9 @@
     keymap {
         compatible = "zmk,keymap";
 
-        /* Galliumv2 with my punctuation and some customizations */
-        gallium_custom_layer {
-            label = "GALCUST";
+        /* Gallium with my punctuation and J-Z and F-Y swap*/
+        gallium_layer {
+            label = "GALLIUM";
 
             bindings = <
                 &kp B           &kp L          &kp D            &kp C            &kp V                                          &kp Z              &kp F          &kp O            &kp U              &kp APOS
@@ -200,6 +199,17 @@
                 &hml LSHIFT Q   &hml LGUI X    &hml LALT M      &hml LCTL W      &kp J                                        &kp K              &hmr RCTL Y    &hmr RALT COMMA   &hmr RGUI DOT    &hmr RSHIFT SLASH
                                                &mlt NUM ESC     &ss_td           &hpt LGUI TAB                     &kp ENTER    &tplt MEDIA SPACE  &mlt NAV BSPC
                 >;
+        };
+
+        colemak_layer {
+            label = "COLEMAK";
+
+            bindings = <
+                &kp Q         &kp W         &kp E        &kp R           &kp T                                               &kp Y              &kp U        &kp I           &kp O          &kp P
+                &kp A         &kp S         &kp D        &kp F           &kp G                                               &kp H              &kp J        &kp K           &kp L          &kp APOS
+                &hml LSHIFT Z &hml LGUI X   &hml LALT C  &hml  LCTL V    &kp B                                               &kp N              &hmr RCTL M  &hmr RALT COMMA &hmr RGUI DOT  &hmr RSHIFT SLASH
+                                                        &mlt NUM ESC     &ss_td  &hpt LGUI TAB          &kp ENTER        &tplt MEDIA SPACE  &mlt NAV BSPC
+            >;
         };
 
         qwerty_layer {
@@ -213,33 +223,6 @@
             >;
         };
 
-        /* Gallium with standard punctuation location, with colon swapped for ? */
-        /* If I use gallium at all, I'll likely not use v2, as the creator said v1
-           was for colstag and v2 was for rowstag */
-        gallium_layer {
-            label = "GALLIUMv1";
-
-            bindings = <
-                &kp B           &kp L          &kp D            &kp C            &kp V                                          &kp J              &kp Y          &kp O            &kp U              &kp APOS
-                &kp N           &kp R          &kp T            &kp S            &kp G                                          &kp P              &kp H          &kp A            &kp E              &kp I
-                &hml LSHIFT Q   &hml LGUI X    &hml LALT M      &hml LCTL W      &kp Z                                          &kp K              &hmr RCTL F    &hmr RALT COMMA  &hmr RGUI DOT      &hmr RSHIFT SLASH
-                                               &mlt NUM ESC  &skq LSHFT       &hpt LGUI TAB                     &kp ENTER    &tplt MEDIA SPACE  &mlt NAV BSPC
-                >;
-        };
-
-
-        /* Canary with space on th left so hopefully help out my right hand */
-        canary_left_space {
-            label = "CANLSPC";
-
-            bindings = <
-                &kp W         &kp L         &kp Y        &kp P           &kp B                                               &kp Z              &kp F        &kp O           &kp U          &kp APOS
-                &kp C         &kp R         &kp S        &kp T           &kp G                                               &kp M              &kp N        &kp E           &kp I          &kp A
-                &hml LSHIFT Q &hml LGUI J   &hml LALT V  &hml  LCTL D    &kp K                                               &kp X              &hmr RCTL H  &hmr RALT COMMA &hmr RGUI DOT  &hmr RSHIFT SLASH
-                                               &mlt NUM ESC  &tplt MEDIA SPACE       &hpt LGUI TAB                     &kp ENTER   &skq LSHFT   &mlt NAV BSPC
-                >;
-        };
-
         nav_layer {
            label = "NAV";
 
@@ -251,7 +234,7 @@
             >;
         };
 
-        sym_layer {
+        num_layer {
             label = "NUM";
 
             bindings = <
@@ -262,7 +245,7 @@
             >;
         };
 
-        func_layer {
+        media_layer {
             label = "MEDIA";
 
             bindings = <
@@ -273,14 +256,14 @@
             >;
         };
 
-        media_layer {
+        mouse_layer {
             label = "MOUSE";
 
             bindings = <
 
                 &bt BT_SEL 0 &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3 &bt BT_CLR                       &msc SCRL_LEFT   &msc SCRL_DOWN  &msc SCRL_UP   &msc SCRL_RIGHT   &trans
                 &trans       &trans          &trans          &trans       &trans                           &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT   &kp MINUS
-                &to ALPHA    &to GALLIUMv1   &to GALCUST     &to CANLSPC  &trans                           &trans           &mkp LCLK       &mkp MCLK      &mkp RCLK         &trans
+                &to GALLIUM  &to QWERTY      &to COLEMAK     &trans       &trans                           &trans           &mkp LCLK       &mkp MCLK      &mkp RCLK         &trans
                                                          &trans       &trans      &trans      &trans   &trans       &trans
            >;
         };
