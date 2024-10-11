@@ -205,9 +205,9 @@
             label = "GRAPHITE";
 
             bindings = <
-                &kp B           &kp L          &kp D            &kp W            &kp Z                                          &kp APOS              &kp F          &kp O            &kp U              &kp J
+                &kp B           &kp L          &kp D            &kp C            &kp Z                                          &kp APOS              &kp F          &kp O            &kp U              &kp J
                 &kp N           &kp R          &kp T            &kp S            &kp G                                          &kp Y              &kp H          &kp A            &kp E              &kp I
-                &hml LSHIFT Q   &hml LGUI X    &hml LALT M      &hml LCTL C      &kp V                                        &kp K              &hmr RCTL P    &hmr RALT COMMA   &hmr RGUI DOT    &hmr RSHIFT SLASH
+                &hml LSHIFT Q   &hml LGUI X    &hml LALT M      &hml LCTL W      &kp V                                        &kp K              &hmr RCTL P    &hmr RALT COMMA   &hmr RGUI DOT    &hmr RSHIFT SLASH
                                                &mlt NUM ESC     &ss_td           &hpt LGUI TAB                     &kp ENTER    &tplt MEDIA SPACE  &mlt NAV BSPC
                 >;
         };
