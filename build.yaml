@@ -22,4 +22,3 @@ include:
   - board: nice_nano_v2
     shield: eternal_keypad
   - board: technikable
-  - board: technikable@1.1
