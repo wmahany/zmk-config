@@ -227,8 +227,8 @@
            label = "NAV";
 
             bindings = <
-                &kp N1    &kp N2     &kp N3       &kp N4    &kp N5                   &kp N6    &kp N7   &kp N8   &kp N9    &kp N0
-                &kp LBKT  &kp RBKT   &kp LPAR &kp RPAR &kp PG_UP                      &kp LEFT  &kp DOWN &kp UP   &kp RIGHT &kp MINUS
+                &kp COLON &kp PIPE   &kp LBKT &kp RBKT &kp N5                         &kp N6    &kp N7   &kp N8   &kp N9    &kp N0
+                &kp SEMI  &kp BSLH   &kp LPAR &kp RPAR &kp PG_UP                      &kp LEFT  &kp DOWN &kp UP   &kp RIGHT &kp MINUS
                 &kp TILDE &kp GRAVE  &kp LBRC &kp RBRC &kp PG_DN                      &kp BACKSLASH  &kp HOME &kp END  &kp DEL  &kp EQUAL
                                                     &trans &trans &trans          &trans &trans &trans
             >;
@@ -240,7 +240,7 @@
             bindings = <
                 &kp EXCL &kp AT  &kp HASH  &kp DLLR  &kp LC(V)                    &kp CARET &kp N7  &kp N8    &kp N9 &kp COLON
                 &kp PRCNT &kp CARET &kp AMPS  &kp STAR &kp LC(C)                     &trans &kp N4  &kp N5    &kp N6 &kp DOT
-                &kp TILDE &kp GRAVE  &kp PIPE &kp BSLH &kp SEMI                      &trans &kp N1  &kp N2    &kp N3 &kp SLASH
+                &kp TILDE &kp GRAVE  &kp PIPE &trans &trans                      &trans &kp N1  &kp N2    &kp N3 &kp SLASH
                                             &trans &trans &trans      &trans &kp N0 &trans
             >;
         };
