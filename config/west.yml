@@ -10,5 +10,9 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
+    - name: zmk-fingerpunch-keyboards
+      url: https://github.com/sadekbaroudi/zmk-fingerpunch-keyboards.git
+      revision: main
+      path: modules/zmk-fingerpunch-keyboards
   self:
     path: config
