@@ -1,0 +1,261 @@
+/* #include <behaviors.dtsi> */
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h> //zmk mouse emulation
+// #include <dt-bindings/zmk/mouse.h> // This is defind in mouse.dtsi
+// #include "mouse.dtsi" //this is for urobs branch
+
+/* use helper macros to define left and right hand keys */
+#include "../zmk-nodefree-config/keypos_def/keypos_36keys.h"                // keyposition helpers
+#define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4  // left-hand keys
+#define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4  // right-hand keys
+#define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                                      // thumb keys
+
+#define GALLIUM 0
+#define QWERTY 1
+#define NAV 2
+#define NUM 3
+#define MEDIA 4
+#define MOUSE 5
+
+/ {
+    conditional_layers {
+            compatible = "zmk,conditional-layers";
+            tri_layer {
+                if-layers = <2 3>;
+                then-layer = <5>;
+            };
+        };
+
+    macros {
+        shift_macro: shift_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&skq LSHFT>;
+            label = "SHIFT_MACRO";
+        };
+
+    };
+
+    behaviors {
+
+       /*  tap: sticky-shift | shift + tap/ double-tap: caps-word | hold: shift */
+       /*  smart_shft: mod_morph { */
+       /*      compatible = "zmk,behavior-mod-morph"; */
+       /*      bindings = <&skq LSHFT>, <&caps_word>; */
+       /*      mods = <(MOD_LSFT)>; */
+       /*      #binding-cells = <0>; */
+       /* }; */
+
+        td_mt: tap_dance_mod_tap {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&skq LSHIFT>, <&kp CAPSLOCK>;
+        };
+
+        ss_td: sticky_shift_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&skq LSHFT>, <&kp CAPSLOCK>;
+        };
+
+        /* ct: capslock_toggle { */
+        /*     compatible = "zmk,behavior-hold-tap"; */
+        /*     #binding-cells = <2> */
+        /*     tapping-term-ms = <200>; */
+        /*     flavor = "tap-preferred" */
+        /*     bindings = <&kp>, <&kp>; */
+        /* }; */
+
+        skq: sticky_key_quick_release {
+            compatible = "zmk,behavior-sticky-key";
+            label = "STICKY_KEY_QUICK_RELEASE";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <500>;
+            quick-release;
+        };
+
+        bhm: balanced_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BALANCED_HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            //global-quick-tap;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+            retro-tap;
+        };
+
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            //global-quick-tap;
+            flavor = "tap-preferred";
+            retro-tap;
+        };
+
+        hphm: hold_preferred_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_PREFERRED_HOMEROW_HODS";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            //global-quick-tap;
+            flavor = "hold-preferred";
+            hold-trigger-key-positions = <35>;
+            hold-trigger-on-release;
+        };
+
+        mlt: my_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MY_LAYER_TAP";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <300>;
+            // //global-quick-tap;
+            flavor = "hold-preferred";
+            bindings = <&mo>, <&kp>;
+        };
+
+        hpt: hold_preferred_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_PREFERRED_TAP";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            //global-quick-tap;
+            flavor = "hold-preferred";
+        };
+
+        tplt: tap_preferred_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TAP_PREFERRED_LAYER_TAP";
+            #binding-cells = <2>;
+            bindings = <&mo>, <&kp>;
+
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            //global-quick-tap;
+            flavor = "tap-preferred";
+        };
+
+        hml: home_row_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOME_ROW_LEFT";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <180>;
+            quick-tap-ms = <175>;                // repeat on tap-into-hold
+            require-prior-idle-ms = <100>;         // requires PR #1387
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>; // play around wit this to maybe improve the feeling of ctrl+delete after fast typing
+            hold-trigger-on-release;             // delay positional check until key-release
+        };
+
+        hmr: home_row_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOME_ROW_RIGHT";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+
+            flavor = "balanced";
+            tapping-term-ms = <180>;
+            quick-tap-ms = <175>;                // repeat on tap-into-hold
+            require-prior-idle-ms = <150>;         // requires PR #1387
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>; // play around wit this to maybe improve the feeling of ctrl+delete after fast typing
+            hold-trigger-on-release;             // delay positional check until key-release
+        };
+
+
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        /* Gallium with my punctuation and J-Z and F-Y swap*/
+        gallium_layer {
+            label = "GALLIUM";
+
+            bindings = <
+                &kp B           &kp L          &kp D            &kp C            &kp V                                          &kp Z              &kp F          &kp O            &kp U              &kp APOS
+                &kp N           &kp R          &kp T            &kp S            &kp G                                          &kp P              &kp H          &kp A            &kp E              &kp I
+                &hml LSHIFT Q   &hml LGUI X    &hml LALT M      &hml LCTL W      &kp J                                        &kp K              &hmr RCTL Y    &hmr RALT COMMA   &hmr RGUI DOT    &hmr RSHIFT SLASH
+                                               &mlt NUM ESC     &ss_td           &hpt LGUI TAB                     &kp ENTER    &tplt MEDIA SPACE  &mlt NAV BSPC
+                >;
+        };
+
+        qwerty_layer {
+            label = "QWERTY";
+
+            bindings = <
+                &kp Q         &kp W         &kp E        &kp R           &kp T                                               &kp Y              &kp U        &kp I           &kp O          &kp P
+                &kp A         &kp S         &kp D        &kp F           &kp G                                               &kp H              &kp J        &kp K           &kp L          &kp APOS
+                &hml LSHIFT Z &hml LGUI X   &hml LALT C  &hml  LCTL V    &kp B                                               &kp N              &hmr RCTL M  &hmr RALT COMMA &hmr RGUI DOT  &hmr RSHIFT SLASH
+                                                        &mlt NUM ESC     &ss_td  &hpt LGUI TAB          &kp ENTER        &tplt MEDIA SPACE  &mlt NAV BSPC
+            >;
+        };
+
+        nav_layer {
+           label = "NAV";
+
+            bindings = <
+                &kp COLON &kp PIPE   &kp LBKT &kp RBKT &kp N5                         &kp N6    &kp N7   &kp N8   &kp N9    &kp N0
+                &kp SEMI  &kp BSLH   &kp LPAR &kp RPAR &kp PG_UP                      &kp LEFT  &kp DOWN &kp UP   &kp RIGHT &kp MINUS
+                &kp TILDE &kp GRAVE  &kp LBRC &kp RBRC &kp PG_DN                      &kp BACKSLASH  &kp HOME &kp END  &kp DEL  &kp EQUAL
+                                                    &trans &trans &trans           &bootloader &trans &trans
+            >;
+        };
+
+        num_layer {
+            label = "NUM";
+
+            bindings = <
+                &kp EXCL &kp AT  &kp HASH  &kp DLLR  &kp LC(V)                    &kp CARET &kp N7  &kp N8    &kp N9 &kp COLON
+                &kp PRCNT &kp CARET &kp AMPS  &kp STAR &kp LC(C)                     &trans &kp N4  &kp N5    &kp N6 &kp DOT
+                &kp TILDE &kp GRAVE  &kp PIPE &trans &trans                      &trans &kp N1  &kp N2    &kp N3 &kp SLASH
+                                            &trans &trans &bootloader    &trans &kp N0 &trans
+            >;
+        };
+
+        media_layer {
+            label = "MEDIA";
+
+            bindings = <
+                &kp F1   &kp F2  &kp F3    &kp F4 &kp LS(LC(V))                  &trans &kp C_MUTE &kp C_VOL_DN  &kp C_VOL_UP    &trans
+                &kp F5   &kp F6  &kp F7    &kp F8 &kp LS(LC(C))                   &trans &kp C_PP &kp C_NEXT  &kp C_PREV   &trans
+                &kp F9   &kp F10 &kp F11   &kp F12 &trans                      &trans &kp C_BRI_DN &kp C_BRI_UP  &trans  &trans
+                                            &trans &trans &trans       &trans &trans &trans
+            >;
+        };
+
+        mouse_layer {
+            label = "MOUSE";
+
+            bindings = <
+
+                &bt BT_SEL 0 &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3 &bt BT_CLR                       &msc SCRL_LEFT   &msc SCRL_DOWN  &msc SCRL_UP   &msc SCRL_RIGHT   &trans
+                &trans        &trans         &trans          &trans       &trans                           &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT   &kp MINUS
+                &to GALLIUM  &to QWERTY      &to GRAPHITE     &trans       &trans                           &trans           &mkp LCLK       &mkp MCLK      &mkp RCLK         &trans
+                                                         &trans       &trans      &trans      &trans   &trans       &trans
+           >;
+        };
+
+    };
+};

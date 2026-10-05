@@ -22,3 +22,7 @@ include:
   # Using QMK for eternal keypad now
   # - board: nice_nano_v2
   #   shield: eternal_keypad
+  - board: nice_nano_v2
+    shield: swweeep_left
+  - board: nice_nano_v2
+    shield: swweeep_right

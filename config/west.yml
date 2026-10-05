@@ -8,7 +8,7 @@ manifest:
     - name: zmk
       # remote: urob
       remote: zmkfirmware
-      revision: v0.3
+      revision: main
       import: app/west.yml
   self:
     path: config
