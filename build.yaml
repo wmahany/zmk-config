@@ -20,6 +20,6 @@
 ---
 include:
   - board: nice_nano//zmk
-    shield: swweeep_left
+    shield: swweeep_left nice_view_adapter nice_view
   - board: nice_nano//zmk
-    shield: swweeep_right
+    shield: swweeep_right nice_view_adapter nice_view
